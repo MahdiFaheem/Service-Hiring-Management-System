@@ -88,7 +88,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2">  <%= user[0].username %>  </h2>
+            <h2 class="mb-2">  {{$user->username}}  </h2>
           </div>
         </div>
       </div>
@@ -111,7 +111,7 @@
                                                 <label style="font-weight:bold;">UserName</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].username %>
+                                            {{$user->username}}
                                             </div>
                                         </div>
                                         <hr />
@@ -121,7 +121,7 @@
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].email %>
+                                            {{$user->email}}
                                             </div>
                                         </div>
                                         <hr />
@@ -132,8 +132,7 @@
                                                 <label style="font-weight:bold;">Phone</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].phone %>
-                                            </div>
+                                            {{$user->phone}}                                            </div>
                                         </div>
                                         <hr />
                                         <div class="row">
@@ -141,8 +140,7 @@
                                                 <label style="font-weight:bold;">Gender</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].gender %>
-                                            </div>
+                                            {{$user->gender}}                                            </div>
                                         </div>
                                         <hr />
                                         <div class="row">
@@ -150,8 +148,7 @@
                                                 <label style="font-weight:bold;">city</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].city %>
-                                            </div>
+                                            {{$user->city}}                                            </div>
                                         </div>
                                         <hr />
                                            <div class="row">
@@ -159,8 +156,7 @@
                                                 <label style="font-weight:bold;">Password</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].password %>  
-                                            </div>
+                                            {{$user->password}}                                            </div>
                                         </div>
                                         <hr />
                                     </div>

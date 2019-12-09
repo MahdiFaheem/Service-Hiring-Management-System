@@ -49,5 +49,9 @@ Route::group(['middleware'=>['sess']], function() {
     Route::get('/customer', 'CustomerController@index')->name('customer-home.index');
     Route::get('/customer/notice', 'NoticeController@show')->name('customer.notice');
     Route::get('/customer/feedback', 'FeedbackController@show')->name('customer.feedback');
+    Route::get('/customer/profile', 'ProfileController@show')->name('customer.profile');
+    Route::get('/customer/profile/delete', 'ProfileController@delete')->name('customer.delete');
+    Route::get('/customer/update', 'ProfileController@update')->name('customer.update');
+    Route::post('customer/update', 'ServiceController@updateProfile');
 
 });

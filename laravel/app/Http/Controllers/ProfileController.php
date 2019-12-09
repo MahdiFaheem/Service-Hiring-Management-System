@@ -14,31 +14,27 @@ class ProfileController extends Controller
                 return view('profile.index')->with('user', $user);
             }
 
-    function update(Request $request,$id){
+    
+            function update(Request $request){
 
-        $user = User::find($id);
-        $user->username = $request->username;
-        $user->email = $request->email;
-        $user->phone = $request->phone;
-        $user->gender = $request->gender;
-        $user->city = $request->city;
-        $user->password = $request->password;
-        //echo($id);
-        //$user->update();
-       // return redirect()->route('home.index',$id);
-        if($user->update()){
-            return redirect()->route('home.index',$id);
-        }else{
-            return redirect()->route('profile.index');
-        }
+                $user = User::find(session()->get('userid'));
+                return view('customer-home.updateprofile')->with('user', $user);
+        
+                }
 
-    }
-    function delete($id){
+                function updateProfile(Request $request){
 
-        $user = User::find($id);
+                    $user = User::find(session()->get('userid'));
+                    return view('customer-home.profile')->with('user', $user);
+            
+                    }
+    
+    function delete(){
+
+        $user = User::find(session()->get('userid'));
 
         if($user->delete()){
-            $deletedRows = $user::where('userid', $id)->delete();
+            $deletedRows = $user::where('userid',session()->get('userid') )->delete();
             return redirect()->route('login.index');
         }else{
             return redirect()->route('profile.index',$id);
@@ -47,6 +43,13 @@ class ProfileController extends Controller
 
 
     }
+
+    function show(){
+
+        $user = User::find(session()->get('userid'));
+          // echo($id);
+              return view('customer-home.profile')->with('user', $user);
+          }
 
 
 
