@@ -79,6 +79,7 @@
     
 
 <form method="post">
+@csrf
 <div class="row">
        
                             <div class="col-12">
@@ -92,8 +93,8 @@
                                                 
                                             </div>
                                             <div class="col-md-8 col-6"> 
-                                               Sender id: <input type="text" name="sender" value="<%=message[0].senderid %>" > <br> <br>
-                                               Message :<input type="text" name="message" value="<%=message[0].message %>" disabled><br> <br>
+                                               Sender id: <input type="text" name="sender" value="{{$message->senderid}}" > <br> <br>
+                                               Message :<input type="text" name="message" value="{{$message->message}}" ><br> <br>
                                              Reply  :  &nbsp &nbsp  <input type="text" name="message" value="" required>
                                                
                                             </div>
