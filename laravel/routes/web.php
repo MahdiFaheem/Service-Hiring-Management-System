@@ -52,6 +52,6 @@ Route::group(['middleware'=>['sess']], function() {
     Route::get('/customer/profile', 'ProfileController@show')->name('customer.profile');
     Route::get('/customer/profile/delete', 'ProfileController@delete')->name('customer.delete');
     Route::get('/customer/update', 'ProfileController@update')->name('customer.update');
-    Route::post('customer/update', 'ServiceController@updateProfile');
+    Route::post('customer/update', 'ProfileController@updateProfile');
 
 });

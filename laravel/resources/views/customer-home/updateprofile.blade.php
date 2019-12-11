@@ -98,6 +98,7 @@
     
 
 <form method="post">
+@csrf
 <div class="row">
        
                             <div class="col-12">

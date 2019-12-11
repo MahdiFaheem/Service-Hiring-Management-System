@@ -25,7 +25,15 @@ class ProfileController extends Controller
                 function updateProfile(Request $request){
 
                     $user = User::find(session()->get('userid'));
-                    return view('customer-home.profile')->with('user', $user);
+                    $user->username = $request->username;
+                    $user->email = $request->email;
+                    $user->phone = $request->phone;
+                    $user->password = $request->password;
+                    $user->gender = $request->gender;
+                    $user->city = $request->city;
+                    $user->save();
+                    return redirect()->route('customer.profile');
+                    
             
                     }
     
