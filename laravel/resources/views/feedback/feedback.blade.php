@@ -28,40 +28,41 @@
   </head>
   <body>
     
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/customer">Uptown</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-          aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-  
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="/customer" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="customer/profile" class="nav-link">Profile</a></li>
-            <li class="nav-item active">
-              <div class="bs-example">
-                <div class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointments</a>
-                  <div class="dropdown-menu">
-                    <a href="../customer/requested" class="dropdown-item">Requested Appointments</a>
-                    <a href="../customer/upcomming" class="dropdown-item">Upcomming Appointments</a>
-                    <a href="../customer/completed" class="dropdown-item">Completed Appointments</a>
-                  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{{route('customer-home.index')}}">Uptown</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="{{route('customer-home.index')}}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{{route('customer.profile')}}" class="nav-link">Profile</a></li>
+          <li class="nav-item active">
+            <div class="bs-example">
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointments</a>
+                <div class="dropdown-menu">
+                  <a href="{{route('customer.requested')}}" class="dropdown-item">Requested Appointments</a>
+                  <a href="{{route('customer.upcomming')}}" class="dropdown-item">Upcomming Appointments</a>
+                  <a href="{{route('customer.completed')}}" class="dropdown-item">Completed Appointments</a>
                 </div>
               </div>
-            </li>
-            
-            <li class="nav-item"><a href="../customer/serviceprovider" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="customer/notice" class="nav-link">Notice</a></li>
-            <li class="nav-item"><a href="customer/feedback" class="nav-link">Feedback</a></li>
-            <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-          </ul>
-        </div>
+            </div>
+          </li>
+          
+          <li class="nav-item"><a href="{{route('customer.serviceshow')}}" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="{{route('customer.notice')}}" class="nav-link">Notice</a></li>
+          <li class="nav-item"><a href="{{route('customer.message')}}" class="nav-link">Message</a></li>
+          <li class="nav-item"><a href="{{route('customer.feedback')}}" class="nav-link">Feedback</a></li>
+          <li class="nav-item"><a href="{{route('logout.index')}}" class="nav-link">Logout</a></li>
+        </ul>
       </div>
-    </nav>
-    <!-- END nav -->
+    </div>
+  </nav>
+  <!-- END nav -->
     
     <div class="hero-wrap ftco-degree-bg" style="background-image: url('/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>

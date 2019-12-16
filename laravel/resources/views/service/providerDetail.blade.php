@@ -28,40 +28,41 @@
   </head>
   <body>
     
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/customer">Uptown</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-          aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-  
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="/customer" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="customer/profile" class="nav-link">Profile</a></li>
-            <li class="nav-item active">
-              <div class="bs-example">
-                <div class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointments</a>
-                  <div class="dropdown-menu">
-                    <a href="../customer/requested" class="dropdown-item">Requested Appointments</a>
-                    <a href="../customer/upcomming" class="dropdown-item">Upcomming Appointments</a>
-                    <a href="../customer/completed" class="dropdown-item">Completed Appointments</a>
-                  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{{route('customer-home.index')}}">Uptown</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="{{route('customer-home.index')}}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{{route('customer.profile')}}" class="nav-link">Profile</a></li>
+          <li class="nav-item active">
+            <div class="bs-example">
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointments</a>
+                <div class="dropdown-menu">
+                  <a href="{{route('customer.requested')}}" class="dropdown-item">Requested Appointments</a>
+                  <a href="{{route('customer.upcomming')}}" class="dropdown-item">Upcomming Appointments</a>
+                  <a href="{{route('customer.completed')}}" class="dropdown-item">Completed Appointments</a>
                 </div>
               </div>
-            </li>
-            
-            <li class="nav-item"><a href="../customer/serviceprovider" class="nav-link">Services</a></li>
-            <li class="nav-item"><a href="customer/notice" class="nav-link">Notice</a></li>
-            <li class="nav-item"><a href="customer/feedback" class="nav-link">Feedback</a></li>
-            <li class="nav-item"><a href="/logout" class="nav-link">Logout</a></li>
-          </ul>
-        </div>
+            </div>
+          </li>
+          
+          <li class="nav-item"><a href="{{route('customer.serviceshow')}}" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="{{route('customer.notice')}}" class="nav-link">Notice</a></li>
+          <li class="nav-item"><a href="{{route('customer.message')}}" class="nav-link">Message</a></li>
+          <li class="nav-item"><a href="{{route('customer.feedback')}}" class="nav-link">Feedback</a></li>
+          <li class="nav-item"><a href="{{route('logout.index')}}" class="nav-link">Logout</a></li>
+        </ul>
       </div>
-    </nav>
-    <!-- END nav -->
+    </div>
+  </nav>
+  <!-- END nav -->
     
     <div class="hero-wrap ftco-degree-bg" style="background-image: url('/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
@@ -88,7 +89,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2"> Service Provider -- <%= user[0].username %>  </h2>
+            <h2 class="mb-2"> Service Provider -- {{$users[0]->username}}  </h2>
           </div>
         </div>
       </div>
@@ -110,7 +111,7 @@
                                                 <label style="font-weight:bold;">UserName</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].username %>
+                                            {{$users[0]->username}}
                                             </div>
                                         </div>
                                         <hr />
@@ -120,7 +121,7 @@
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].email %>
+                                            {{$users[0]->email}}
                                             </div>
                                         </div>
                                         <hr />
@@ -131,8 +132,7 @@
                                                 <label style="font-weight:bold;">Phone</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].phone %>
-                                            </div>
+                                            {{$users[0]->phone}}                                            </div>
                                         </div>
                                         <hr />
                                         <div class="row">
@@ -140,7 +140,7 @@
                                                 <label style="font-weight:bold;">Gender</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].gender %>
+                                            {{$users[0]->gender}}
                                             </div>
                                         </div>
                                         <hr />
@@ -149,7 +149,7 @@
                                                 <label style="font-weight:bold;">city</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].city %>
+                                            {{$users[0]->city}}
                                             </div>
                                         </div>
                                         <hr />
@@ -158,7 +158,7 @@
                                                 <label style="font-weight:bold;">skill</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].skill %>  
+                                            {{$users[0]->skill}}
                                             </div>
                                         </div>
                                         <hr />
@@ -168,8 +168,8 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                          <a href="../request-appointment/<%= user[0].userid %>" class="list-group-item list-group-item-action"><h4>Book Appointment</h4> <br> </a>
-                          <a href="../service-feedback/<%= user[0].userid %>" class="list-group-item list-group-item-action"><h4>View feedback</h4> <br> </a>
+                          <a href="../request-appointment/{{$users[0]->userid}}" class="list-group-item list-group-item-action"><h4>Book Appointment</h4> <br> </a>
+                          <a href="../service-feedback/{{$users[0]->userid}}" class="list-group-item list-group-item-action"><h4>View feedback</h4> <br> </a>
                   </div>
 
 

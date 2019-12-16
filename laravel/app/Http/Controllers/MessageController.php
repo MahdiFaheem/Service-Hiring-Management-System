@@ -83,6 +83,12 @@ class MessageController extends Controller
      */
     public function update(Request $request)
     {
+        $request->validate([
+            'sender'=>'required',
+            'message'=>'required',
+            'reply'=>'required'
+            
+        ]);
         $message = message::where('receiverid',  session()->get('userid'))->where('senderid', $request->sender)->get();
         $message[0]->senderid =session()->get('userid');
        $message[0]->receiverid = $request->sender;

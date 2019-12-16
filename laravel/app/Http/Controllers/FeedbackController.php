@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\feedback;
+use App\Service;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
@@ -33,10 +34,22 @@ class FeedbackController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id,Request $request)
     {
-        //
+        $request->validate([
+            
+            'message'=>'required'
+            
+        ]);
+        $service=Service::where('serviceid', $id)->first();
+        $feedback=new feedback();
+        $feedback->sender=session()->get('userid');
+        $feedback->receiver=$service->userid;
+        $feedback->feedback=$request->message;
+        $feedback->save();
+        return redirect()->route('customer-home.index');
     }
+
 
     /**
      * Display the specified resource.
@@ -96,4 +109,30 @@ class FeedbackController extends Controller
     {
         //
     }
+
+    public function servicefeedback($id)
+    {
+        $feedback = feedback::where('receiver', $id)
+        ->get();
+
+
+
+        if(count($feedback)>0)
+        {
+    
+            return view('feedback.feedback')->with('feedback', $feedback);
+        }
+
+        else {
+        echo("no feedback request for you");
+        }
+
+    }
+
+    public function givefeedback($id)
+    {
+        return view('feedback.givefeedback');
+
+    }
+   
 }

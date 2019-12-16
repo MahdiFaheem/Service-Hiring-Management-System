@@ -14,6 +14,7 @@
 <body>
 <div class="login-form">
     <form method="post" >
+    @csrf
 
   <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
       <h4 class="modal-title">Login to Your Account</h4>

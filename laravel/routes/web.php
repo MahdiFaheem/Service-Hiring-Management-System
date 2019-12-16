@@ -56,4 +56,21 @@ Route::group(['middleware'=>['sess']], function() {
     Route::get('/customer/message', 'MessageController@index')->name('customer.message');
     Route::post('/customer/message', 'MessageController@update');
 
+
+    Route::get('/customer/serviceprovider', 'CustomerController@serviceshow')->name('customer.serviceshow');
+    Route::get('/customer/serviceprovider/info/{id}', 'CustomerController@serviceinfo')->name('customerservicepro.info');
+
+    Route::get('/customer/serviceprovider/service-feedback/{id}', 'FeedbackController@servicefeedback')->name('servicefeedback.info');
+    Route::get('/customer/give/feedback/{id}', 'FeedbackController@givefeedback')->name('givefeedback.info');
+    Route::post('/customer/give/feedback/{id}', 'FeedbackController@store');
+
+    Route::get('/customer/serviceprovider/request-appointment/{id}', 'AppointmentController@index')->name('customer.book');
+    Route::post('/customer/serviceprovider/request-appointment/{id}', 'AppointmentController@store');
+    Route::get('/customer/requested', 'AppointmentController@requested')->name('customer.requested');
+    Route::get('/customer/upcomming', 'AppointmentController@upcomming')->name('customer.upcomming');
+    Route::get('/customer/completed', 'AppointmentController@completed')->name('customer.completed');
+    Route::get('/customer/requested/delete', 'AppointmentController@delete')->name('appointment.delete');
+    Route::get('/customer/upcomming/pay', 'AppointmentController@pay')->name('appointment.pay');
+
+
 });
