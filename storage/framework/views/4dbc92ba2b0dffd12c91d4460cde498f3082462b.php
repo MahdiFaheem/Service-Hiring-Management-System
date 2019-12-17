@@ -121,7 +121,7 @@
    <div class="list-group" align="center" >
     <div class="col-md-12 heading-section text-center ftco-animate mb-5">
     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
- <a href="#" class="list-group-item list-group-item-action"><h4><?php echo e($user->username); ?></h4> <br> </a>
+ <a href="<?php echo e(route('servicepro.info', $user->userid)); ?>" class="list-group-item list-group-item-action"><h4><?php echo e($user->username); ?></h4> <br> </a>
  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>
 </div>

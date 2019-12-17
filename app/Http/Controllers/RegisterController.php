@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\User;
 //use App\Http\Requests\RegRequest;
 use Validator;
+use Egulias\EmailValidator\Validation\DNSCheckValidation; 
 
 
 class RegisterController extends Controller
@@ -16,15 +17,21 @@ class RegisterController extends Controller
     }
 
     function store(Request $request){
-         $request->validate([
-            'phone'=>'unique:user,phone',
-            'email'=>'unique:user,email'
+        $validation = Validator::make($request->all(), [
+            'username'=>'required',
+            'password'=>'required',
+            'email'=>'required|unique:user|email:rfc',
+            'phone'=>'required|unique:user|max:11|min:11',
+            'city'=>'required',
+            'skill'=>'required',
+            'price'=>'required'
+
         ]);
-       // if($validation->fails()){
-         
-          //  return back()->with('errors', $validation->errors())->withInput();
+        if($validation->fails()){
+       
+            return back()->with('errors', $validation->errors())->withInput();
            
-       // }
+        }
        
         $user = new User();
         $user->username = $request->username;
@@ -47,15 +54,21 @@ class RegisterController extends Controller
         }
 
         function storecus(Request $request){
-            $request->validate([
-                'phone'=>'unique:user,phone',
-                'email'=>'unique:user,email'
+          
+            $validation = Validator::make($request->all(), [
+                'username'=>'required',
+                'password'=>'required',
+                'email'=>'required|unique:user|email:rfc',
+                'phone'=>'required|unique:user|max:11|min:11',
+                'city'=>'required',
+                'location'=>'required'
             ]);
             if($validation->fails()){
            
                 return back()->with('errors', $validation->errors())->withInput();
                
             }
+    
             $user = new User();
             $user->username = $request->username;
             $user->password =$request->password;

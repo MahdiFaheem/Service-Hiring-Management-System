@@ -36,14 +36,14 @@
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Username *" name="username" required="required"/>
+                                            <input type="text" class="form-control" placeholder="Username *" name="username" />
                                         </div>
                                          <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City *"  name="city" required="required"/>
+                                            <input type="text" class="form-control" placeholder="City *"  name="city" />
                                         </div>
                                        
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="password" name="password" required="required"/>
+                                            <input type="password" class="form-control" placeholder="password" name="password" />
                                         </div>
                                         
                                         <div class="form-group">
@@ -59,13 +59,13 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" name="email" required="required"/>
+                                            <input type="email" class="form-control" placeholder="Your Email *" name="email" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                    
                                         <div class="form-group">
-                                            <input type="text" minlength="11" maxlength="11" name="phone" class="form-control" placeholder="Your Phone *"  />
+                                            <input type="text" name="phone" class="form-control" placeholder="Your Phone *"  />
                                         </div>
                                          <div class="form-group">
                                             <div class="maxl"><p> Service: </p>
@@ -84,10 +84,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Price " name="price" required="required"/>
+                                            <input type="text" class="form-control" placeholder="Price " name="price" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Service Description *" name="description" required="required"/>
+                                            <input type="text" class="form-control" placeholder="Service Description *" name="description" />
                                         </div>
                                         <input type="submit" class="btnRegister" formaction="register/servicereg" value="Register"/>
                                      
@@ -109,14 +109,14 @@
                                 <div class="row register-form">
                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Username *" name="username" required="required" />
+                                            <input type="text" class="form-control" placeholder="Username *" name="username"  />
                                         </div>
                                          <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City *"  name="city" required="required" />
+                                            <input type="text" class="form-control" placeholder="City *"  name="city"  />
                                         </div>
                                        
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="password" name="password" required="required" />
+                                            <input type="password" class="form-control" placeholder="password" name="password"  />
                                         </div>
                                         
                                         <div class="form-group">
@@ -135,13 +135,13 @@
                                     </div>
                                     <div class="col-md-6">
                                           <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" name="email"required="required" />
+                                            <input type="email" class="form-control" placeholder="Your Email *" name="email" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="11" maxlength="11" name="phone" class="form-control" placeholder="Your Phone *" required="required" />
+                                            <input type="text" minlength="11" maxlength="11" name="phone" class="form-control" placeholder="Your Phone *" />
                                         </div>
                                          <div class="form-group">
-                                            <input type="text" name="location" class="form-control" placeholder="Your Address *" required="required" />
+                                            <input type="text" name="location" class="form-control" placeholder="Your Address *" />
                                         </div>
                                         <input type="submit" class="btnRegister" formaction="register/customerreg" value="Register"/>
                                     </div>
