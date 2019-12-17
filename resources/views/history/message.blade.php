@@ -129,27 +129,27 @@
 
       </tr>
     <hr />
-    <% for(var i=0; i< user.length; i++){ %>
+    @for($i=0; $i< count($user); $i++)
       <tr>
 
         <td> <div class="col-md-8 col-6">
-              <%= user[i].senderid %>
+              {{$user[$i]->senderid }}
          </div></td>
      
    
      
      <td> <div class="col-md-8 col-6">
-           <%= user[i].receiverid %>
+     {{$user[$i]->receiverid }}
       </div></td>
 
  <td> 
     <div class="col-md-8 col-6">
-         <%= user[i].message %>
+    {{$user[$i]->message }}
     </div>
   </td>
 </tr> 
 
- <% } %>
+ @endfor
 </div>
 </div>
 

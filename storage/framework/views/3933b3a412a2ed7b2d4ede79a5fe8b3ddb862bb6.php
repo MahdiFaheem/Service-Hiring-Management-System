@@ -60,9 +60,10 @@
               <div class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others</a>
                 <div class="dropdown-menu">
-                  <a href="../admin/feedback" class="dropdown-item">Feedbacks</a>
-                  <a href="../admin/message" class="dropdown-item">Messages</a>
-                  <a href="../admin/history" class="dropdown-item">User History</a>
+                  <a href="<?php echo e(route('adminhome.feedback')); ?>" class="dropdown-item">Feedbacks</a>
+                  <a href="<?php echo e(route('adminhome.message')); ?>" class="dropdown-item">Messages</a>
+                  <a href="<?php echo e(route('adminhome.history')); ?>" class="dropdown-item">User History</a>
+                  <a href="<?php echo e(route('adminhome.warning')); ?>" class="dropdown-item">Warnings</a>
                   <a href="../admin/transaction" class="dropdown-item">Transaction</a>
                 </div>
               </div>

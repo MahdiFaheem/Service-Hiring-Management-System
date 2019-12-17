@@ -28,6 +28,13 @@ Route::get('/adminhome/profile', 'AdminController@profile')->name('adminhome.pro
 Route::get('/adminhome/profile/edit', 'AdminController@edit')->name('adminhome.edit');
 Route::post('/adminhome/profile/edit', 'AdminController@update');
 
+Route::get('/adminhome/messages', 'HistoryController@message')->name('adminhome.message');
+Route::get('/adminhome/feedbacks', 'HistoryController@feedback')->name('adminhome.feedback');
+Route::get('/adminhome/history', 'HistoryController@history')->name('adminhome.history');
+Route::get('/adminhome/warnings', 'HistoryController@warning')->name('adminhome.warning');
+
+
+
 Route::get('/adminhome/serviceprovider', 'AdminServiceController@serviceshow')->name('adminhome.serviceshow');
 Route::get('/adminhome/serviceprovider/info/{id}', 'AdminServiceController@serviceinfo')->name('servicepro.info');
 Route::get('/adminhome/serviceprovider/info/edit/{id}', 'AdminServiceController@serviceedit')->name('servicepro.edit');

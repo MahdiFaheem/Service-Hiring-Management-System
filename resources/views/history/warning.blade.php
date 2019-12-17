@@ -98,7 +98,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2">User History </h2>
+            <h2 class="mb-2">Warnings</h2>
           </div>
         </div>
       </div>
@@ -111,88 +111,38 @@
      
      <tr>
 
-       <th><div class="col-sm-3 col-md-2 col-5">
-            <label style="font-weight:bold;">Customer name</label>
-        </div> </th>
 
-        <th><div class="col-sm-3 col-md-2 col-5">
-                <label style="font-weight:bold;">Service</label>
-            </div> </th>
 
       <th> <div class="col-sm-3 col-md-2 col-5">
-          <label style="font-weight:bold;">Location</label>
+          <label style="font-weight:bold;">Users</label>
       </div></th> 
 
 
 
      <th> <div class="col-sm-3 col-md-2 col-5">
-        <label style="font-weight:bold;">Time</label>
+        <label style="font-weight:bold;">Warnings</label>
     </div>
       </th> 
 
-      <th> <div class="col-sm-3 col-md-2 col-5">
-            <label style="font-weight:bold;">Request</label>
-        </div>
-          </th> 
-
-      <th> <div class="col-sm-3 col-md-2 col-5">
-            <label style="font-weight:bold;">Payment</label>
-        </div>
-          </th> 
-
 
       </tr>
-    <hr>
-   @for($i=0; $i< count($user); $i++)
+    <hr />
+    @for($i=0; $i< count($user); $i++)
       <tr>
 
         <td> <div class="col-md-8 col-6">
-        {{ $user[$i]->username }}
+              {{$user[$i]->username }}
          </div></td>
      
-         <td> <div class="col-md-8 col-6">
-         {{ $user[$i]->servicename }}
-           </div></td>
+   
      
      <td> <div class="col-md-8 col-6">
-     {{ $user[$i]->location }}
+     {{$user[$i]->warning }}
       </div></td>
 
- <td> 
-    <div class="col-md-8 col-6">
-    {{ $user[$i]->time }}
-    </div>
-  </td>
-
-  <td> @if(   $user[$i]->request ==1 )
-        <div class="col-md-8 col-6">
-                <label style="font-weight:bold;">Accepted Service</label>
-        </div>
-        
-         @else 
-            <div class="col-md-8 col-6">
-                    <label style="font-weight:bold;">Not Accepted yet</label>
-            </div>
-            @endif
-           
-      </td>
-
-  <td> @if(   $user[$i]->pay ==1 )
-        <div class="col-md-8 col-6">
-                <label style="font-weight:bold;">Paid</label>
-        </div>
-        
-         @else 
-            <div class="col-md-8 col-6">
-                    <label style="font-weight:bold;">Not Paid</label>
-            </div>
-            @endif
-           
-      </td>
-      @endfor
 </tr> 
 
-
+ @endfor
 </div>
 </div>
 
