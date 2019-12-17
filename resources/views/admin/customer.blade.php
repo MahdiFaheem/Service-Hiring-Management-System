@@ -119,9 +119,9 @@
 
    <div class="list-group" align="center" >
     <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-    <% for(var i=0; i< user.length; i++){ %>
- <a href="../admin/customerinfo/<%= user[i].userid %>" class="list-group-item list-group-item-action"><h4><%= user[i].username %></h4> <br> </a>
- <% } %>
+    @foreach($users as $user)
+ <a href="{{ route('admincustomer.info', $user->userid) }}" class="list-group-item list-group-item-action"><h4>{{$user->username}}</h4> <br> </a>
+ @endforeach
 </div>
 </div>
 

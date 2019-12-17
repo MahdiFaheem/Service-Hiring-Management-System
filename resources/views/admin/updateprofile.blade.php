@@ -99,7 +99,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2">  <%= user[0].username %>  </h2>
+            <h2 class="mb-2">  {{ $users[0]->username }}   </h2>
           </div>
         </div>
       </div>
@@ -109,6 +109,7 @@
     
 
 <form method="post">
+@csrf
 <div class="row">
        
                             <div class="col-12">
@@ -121,8 +122,8 @@
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">UserName</label>
                                             </div>
-                                            <div class="col-md-8 col-6"><input type="text" name="username" value="<%=user[0].username%>">
-                                               
+                                            <div class="col-md-8 col-6"><input type="text" name="username" value="{{ $users[0]->username }} ">
+                                           <br> {{$errors->first('username')}}
                                             </div>
                                         </div>
                                         <hr />
@@ -132,7 +133,8 @@
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                    <input type="text" name="email" value="<%=user[0].email%>">
+                                                    <input type="text" name="email" value="{{ $users[0]->email }} ">
+                                                    <br> {{$errors->first('email')}}
                                             </div>
                                         </div>
                                         <hr />
@@ -143,7 +145,8 @@
                                                 <label style="font-weight:bold;">Phone</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                    <input type="text" name="phone" value="<%=user[0].phone%>">
+                                                    <input type="text" name="phone" value="{{ $users[0]->phone }} ">
+                                                    <br> {{$errors->first('phone')}}
                                             </div>
                                         </div>
                                         <hr />
@@ -152,7 +155,8 @@
                                                 <label style="font-weight:bold;">Gender</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                    <input type="text" name="gender" value="<%=user[0].gender%>">
+                                                    <input type="text" name="gender" value="{{ $users[0]->gender }} ">
+                                                    <br> {{$errors->first('gender')}}
                                             </div>
                                         </div>
                                         <hr />
@@ -161,7 +165,8 @@
                                                 <label style="font-weight:bold;">city</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                    <input type="text" name="city" value="<%=user[0].city%>">
+                                                    <input type="text" name="city" value="{{ $users[0]->city }} ">
+                                                    <br> {{$errors->first('city')}}
                                             </div>
                                         </div>
                                         <hr />
@@ -170,7 +175,8 @@
                                                 <label style="font-weight:bold;">Password</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                    <input type="text" name="password" value="<%=user[0].password%>">
+                                                    <input type="text" name="password" value="{{ $users[0]->password }} ">
+                                                    <br> {{$errors->first('password')}}
                                             </div>
                                         </div>
                                         <hr />

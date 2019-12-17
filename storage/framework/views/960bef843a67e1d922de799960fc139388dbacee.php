@@ -37,13 +37,19 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Username *" name="username" />
+                                            <br> <?php echo e($errors->first('username')); ?>
+
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="City *"  name="city" />
+                                            <br> <?php echo e($errors->first('city')); ?>
+
                                         </div>
                                        
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="password" name="password" />
+                                            <br> <?php echo e($errors->first('password')); ?>
+
                                         </div>
                                         
                                         <div class="form-group">
@@ -60,12 +66,16 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Your Email *" name="email" />
+                                            <br> <?php echo e($errors->first('email')); ?>
+
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                    
                                         <div class="form-group">
                                             <input type="text" name="phone" class="form-control" placeholder="Your Phone *"  />
+                                            <br> <?php echo e($errors->first('phone')); ?>
+
                                         </div>
                                          <div class="form-group">
                                             <div class="maxl"><p> Service: </p>
@@ -85,6 +95,8 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Price " name="price" />
+                                            <br> <?php echo e($errors->first('price')); ?>
+
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Service Description *" name="description" />
@@ -92,9 +104,7 @@
                                         <input type="submit" class="btnRegister" formaction="register/servicereg" value="Register"/>
                                      
                                     </div>
-                                         <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $err): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php echo e($err); ?> <br>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                         
                                 </div>
                             </div>
                              </form>
@@ -110,13 +120,19 @@
                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Username *" name="username"  />
+                                            <br> <?php echo e($errors->first('username')); ?>
+
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="City *"  name="city"  />
+                                            <br> <?php echo e($errors->first('city')); ?>
+
                                         </div>
                                        
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="password" name="password"  />
+                                            <br> <?php echo e($errors->first('password')); ?>
+
                                         </div>
                                         
                                         <div class="form-group">
@@ -136,20 +152,24 @@
                                     <div class="col-md-6">
                                           <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Your Email *" name="email" />
+                                            <br> <?php echo e($errors->first('email')); ?>
+
                                         </div>
                                         <div class="form-group">
                                             <input type="text" minlength="11" maxlength="11" name="phone" class="form-control" placeholder="Your Phone *" />
+                                            <br> <?php echo e($errors->first('phone')); ?>
+
                                         </div>
                                          <div class="form-group">
                                             <input type="text" name="location" class="form-control" placeholder="Your Address *" />
+                                            <br> <?php echo e($errors->first('location')); ?>
+
                                         </div>
                                         <input type="submit" class="btnRegister" formaction="register/customerreg" value="Register"/>
                                     </div>
                                    
                                     </div>
-                                         <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $err): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php echo e($err); ?> <br>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        
                                 </div>
                                 </div>
                                   </form> 

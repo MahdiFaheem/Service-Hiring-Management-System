@@ -36,13 +36,16 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Username *" name="username" />
+                                            <br> {{$errors->first('username')}}
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="City *"  name="city" />
+                                            <br> {{$errors->first('city')}}
                                         </div>
                                        
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="password" name="password" />
+                                            <br> {{$errors->first('password')}}
                                         </div>
                                         
                                         <div class="form-group">
@@ -59,12 +62,14 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Your Email *" name="email" />
+                                            <br> {{$errors->first('email')}}
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                    
                                         <div class="form-group">
                                             <input type="text" name="phone" class="form-control" placeholder="Your Phone *"  />
+                                            <br> {{$errors->first('phone')}}
                                         </div>
                                          <div class="form-group">
                                             <div class="maxl"><p> Service: </p>
@@ -84,6 +89,7 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Price " name="price" />
+                                            <br> {{$errors->first('price')}}
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Service Description *" name="description" />
@@ -91,9 +97,7 @@
                                         <input type="submit" class="btnRegister" formaction="register/servicereg" value="Register"/>
                                      
                                     </div>
-                                         @foreach($errors->all() as $err)
-                                                {{$err}} <br>
-                                        @endforeach
+                                         
                                 </div>
                             </div>
                              </form>
@@ -108,13 +112,16 @@
                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Username *" name="username"  />
+                                            <br> {{$errors->first('username')}}
                                         </div>
                                          <div class="form-group">
                                             <input type="text" class="form-control" placeholder="City *"  name="city"  />
+                                            <br> {{$errors->first('city')}}
                                         </div>
                                        
                                         <div class="form-group">
                                             <input type="password" class="form-control" placeholder="password" name="password"  />
+                                            <br> {{$errors->first('password')}}
                                         </div>
                                         
                                         <div class="form-group">
@@ -134,20 +141,21 @@
                                     <div class="col-md-6">
                                           <div class="form-group">
                                             <input type="email" class="form-control" placeholder="Your Email *" name="email" />
+                                            <br> {{$errors->first('email')}}
                                         </div>
                                         <div class="form-group">
                                             <input type="text" minlength="11" maxlength="11" name="phone" class="form-control" placeholder="Your Phone *" />
+                                            <br> {{$errors->first('phone')}}
                                         </div>
                                          <div class="form-group">
                                             <input type="text" name="location" class="form-control" placeholder="Your Address *" />
+                                            <br> {{$errors->first('location')}}
                                         </div>
                                         <input type="submit" class="btnRegister" formaction="register/customerreg" value="Register"/>
                                     </div>
                                    
                                     </div>
-                                         @foreach($errors->all() as $err)
-                                                {{$err}} <br>
-                                        @endforeach
+                                        
                                 </div>
                                 </div>
                                   </form> 

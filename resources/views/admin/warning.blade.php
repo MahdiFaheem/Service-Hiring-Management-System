@@ -80,7 +80,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2"> Warning message for <%= user[0].username %>  </h2>
+            <h2 class="mb-2"> Warning message for {{ $users[0]->username }}  </h2>
           </div>
         </div>
       </div>
@@ -90,6 +90,7 @@
     
 
 <form method="post">
+@csrf
 <div class="row">
        
                             <div class="col-12">
@@ -103,7 +104,7 @@
                                                 <label style="font-weight:bold;">Warning Message</label>
                                             </div>
                                             <div class="col-md-8 col-6"> <input type="text" name="warning" value="">
-                                               
+                                            <br> {{$errors->first('warning')}} 
                                             </div>
                                         </div>
                                         <hr />

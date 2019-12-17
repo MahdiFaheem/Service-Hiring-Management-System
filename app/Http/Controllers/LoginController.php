@@ -3,43 +3,76 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\SpRequest;
 use App\User;
-use Illuminate\Support\Facades\DB;
+use Validator;
+//use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller
 {
- 
-	function index(){
-		return view('login.index');
-	}
 
-	function verify(Request $request){
-		
-		//$users = User::all();
-		$user = User::where('username', $request->username)
-					->where('password', $request->password)
-					->get();
+    function index(){
+        return view('login.index');
+    }
 
-		//$users = DB::table('users')->get();
-	/*	$user = DB::table('users')->where('username', $request->username)
-					->where('password', $request->password)
-					->get();*/
+    function verify(Request $request){
 
-		if($user[0]->type == 4){
-			$request->session()->put('uname', $request->input('username'));
-			$request->session()->put('userid', $user[0]->userid);
-			//$request->session()->put('user', $user->type);
-			//$request->session()->put('user', $user);
+        $request->validate([
+            'username'=>'required',
+            'password'=>'required'
+        ]);
 
-			return redirect()->route('adminhome.index');
-		}else{
+        $users = User::all();
 
-			$request->session()->flash('msg', 'invalid username/password');
+        $userid = User::where('username', $request->username)
+                    ->where('password', $request->password)
+                    ->get('userid');
 
-			//return view('login.index');
-			return redirect()->route('login.index');
-		}
-	}
+        $type = User::where('username', $request->username)
+            ->where('password', $request->password)
+            ->get('type');
+
+        foreach($type as $usertype)
+        {
+            $usertype= $usertype->type ;
+
+        }
+
+
+       if(count($userid) > 0 && $usertype==1){
+            $request->session()->put('username', $request->input('username'));
+            foreach($userid as $servicepid)
+            {
+              $id= $servicepid->userid ;
+                return redirect()->route('home.index',$id);
+            }
+
+
+        }
+        
+        else if(count($userid) > 0 && $usertype==2)
+        {
+            $request->session()->put('username', $request->input('username'));
+            $request->session()->put('userid', $userid[0]->userid);
+            
+                return redirect()->route('customer-home.index');
+            
+        }
+        else if(count($userid) > 0 && $usertype==4)
+        {
+            $request->session()->put('username', $request->input('username'));
+            $request->session()->put('userid', $userid[0]->userid);
+            
+                return redirect()->route('adminhome.index');
+            
+        }
+        else{
+
+            $request->session()->flash('msg', 'invalid username/password');
+            echo("invalid");
+
+        }
+    }
 }
 
 

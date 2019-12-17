@@ -80,7 +80,7 @@
         <div class="row no-gutters slider-text justify-content-center align-items-center">
           
             <div class="text text-center">
-              <h1 class="mb-4"> <br>Your profile </h1>
+              <h1 class="mb-4"> <br>Service Update </h1>
 
              
             </div>
@@ -99,7 +99,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2">  <%= user[0].username %>  </h2>
+            <h2 class="mb-2">  {{ $users[0]->username}}  </h2>
           </div>
         </div>
       </div>
@@ -109,6 +109,7 @@
     
 
 <form method="post">
+@csrf
 <div class="row">
        
                             <div class="col-12">
@@ -121,7 +122,7 @@
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">UserName</label>
                                             </div>
-                                            <div class="col-md-8 col-6"><%= user[0].username %>
+                                            <div class="col-md-8 col-6">{{$users[0]->username}}
                                                
                                             </div>
                                         </div>
@@ -132,7 +133,7 @@
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                    <%=user[0].email%>
+                                                    {{$users[0]->email}}
                                             </div>
                                         </div>
                                         <hr />
@@ -145,7 +146,8 @@
                                                 <label style="font-weight:bold;">Skill</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                    <input type="text" name="skill" value="<%=user[0].skill%>">
+                                                    <input type="text" name="skill" value="{{$skills[0]->servicename}}">
+                                                    
                                             </div>
                                         </div>
                                         <hr />

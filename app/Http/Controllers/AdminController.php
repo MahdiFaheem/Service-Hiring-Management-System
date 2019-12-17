@@ -14,14 +14,43 @@ class AdminController extends Controller
     }
     
     
-	function serviceshow(){
-        $user = User::where('type', '1')
-					->get();
-		return view('admin.serviceprovider')->with('users', $user);
+	function profile(){
+		$id = session()->get('userid');
+		$user = User::where('userid' ,$id)
+		->get();
+		return view('admin.profile')->with('users', $user);
     }
-    function serviceinfo($id){
-        $user = User::where('userid', $id)
-					->get();
-		return view('admin.providerinfo')->with('users', $user);
+  
+	function edit()
+	{
+		$id = session()->get('userid');
+		$user = User::where('userid', $id)
+		->get();
+		return view('admin.updateprofile')->with('users', $user);
 	}
+	function update(Request $request)
+	{
+		$request->validate([
+			'username'=>'required',
+			'email'=>'required',
+			'gender'=>'required',
+			'city'=>'required',
+			'password'=>'required',
+			'phone'=>'required'
+			
+		]);
+
+		$user = User::find(session()->get('userid'));
+		$user->username = $request->username;
+		$user->email = $request->email;
+		$user->phone = $request->phone;
+		$user->password = $request->password;
+		$user->gender = $request->gender;
+		$user->city = $request->city;
+		$user->save();
+		return redirect()->route('adminhome.profile');
+		
+	}
+
 }
+

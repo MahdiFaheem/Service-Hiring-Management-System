@@ -48,12 +48,12 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Userlist</a>
                 <div class="dropdown-menu">
                   <a href="<?php echo e(route('adminhome.serviceshow')); ?>" class="dropdown-item">Service Providers</a>
-                  <a href="/admin/customer" class="dropdown-item">Customers</a>
+                  <a href="<?php echo e(route('adminhome.customershow')); ?>" class="dropdown-item">Customers</a>
                 </div>
               </div>
             </div>
           </li>
-          <li class="nav-item"><a href="admin/profile" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="<?php echo e(route('adminhome.profile')); ?>" class="nav-link">Profile</a></li>
          
           <li class="nav-item">
             <div class="bs-example">

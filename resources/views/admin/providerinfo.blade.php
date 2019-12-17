@@ -99,7 +99,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2"> Service Provider -- <%= user[0].username %>  </h2>
+            <h2 class="mb-2"> Service Provider -- {{$users[0]->username}} </h2>
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@
                                                 <label style="font-weight:bold;">UserId</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].userid %>
+                                            {{$users[0]->userid}} 
                                             </div>
                                         </div>
                                         <hr />
@@ -131,7 +131,7 @@
                                                 <label style="font-weight:bold;">UserName</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].username %>
+                                            {{$users[0]->username}} 
                                             </div>
                                         </div>
                                         <hr />
@@ -141,7 +141,7 @@
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].email %>
+                                            {{$users[0]->email}} 
                                             </div>
                                         </div>
                                         <hr />
@@ -152,7 +152,7 @@
                                                 <label style="font-weight:bold;">Phone</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].phone %>
+                                                 {{ $users[0]->phone }}
                                             </div>
                                         </div>
                                         <hr />
@@ -161,7 +161,7 @@
                                                 <label style="font-weight:bold;">Gender</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].gender %>
+                                            {{$users[0]->gender}} 
                                             </div>
                                         </div>
                                         <hr />
@@ -170,7 +170,7 @@
                                                 <label style="font-weight:bold;">city</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <%= user[0].city %>
+                                            {{$users[0]->city}} 
                                             </div>
                                         </div>
                                         <hr />
@@ -179,7 +179,7 @@
                                                 <label style="font-weight:bold;">skill</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                 <%= user[0].skill %>  
+                                            {{ $skills[0]->servicename }}  
                                             </div>
                                         </div>
                                         <hr />
@@ -197,10 +197,10 @@
    
    
     <div class="col-md-6">
-      <a href="../../admin/providerupdate/<%= user[0].userid %>" class="list-group-item list-group-item-action"><h4>Update</h4> </a>
-      <a href="../../admin/warning/<%= user[0].userid %>" class="list-group-item list-group-item-action"><h4>Warning</h4> <br> </a>
-      <a href="../../admin/disable/<%= user[0].userid %>" class="list-group-item list-group-item-action"><h4>Disable</h4> <br> </a>
-      <a href="../../admin/message/<%= user[0].userid %>" class="list-group-item list-group-item-action"><h4>Message</h4> <br> </a>
+      <a href="{{ route('servicepro.edit', $users[0]->userid) }} " class="list-group-item list-group-item-action"><h4>Update</h4> </a>
+      <a href="{{ route('servicepro.warn', $users[0]->userid) }} " class="list-group-item list-group-item-action"><h4>Warning</h4>  </a>
+      <a href=" {{ route('servicepro.delete', $users[0]->userid) }}" class="list-group-item list-group-item-action"><h4>Disable</h4> <br> </a>
+      <a href="{{ route('servicepro.message', $users[0]->userid) }}" class="list-group-item list-group-item-action"><h4>Message</h4> <br> </a>
 </div>
 </div>
 </div>
