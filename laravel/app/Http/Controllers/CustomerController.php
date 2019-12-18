@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\Service;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -29,8 +30,10 @@ class CustomerController extends Controller
     }
     function serviceinfo($id){
         $user = User::where('userid', $id)
-					->get();
-		return view('service.providerDetail')->with('users', $user);
+                    ->get();
+        $service=Service::where('userid', $id)->first();
+        //echo $service;
+		return view('service.providerDetail')->with('users', $user)->with('service', $service);
     }
     
 

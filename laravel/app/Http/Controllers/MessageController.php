@@ -92,7 +92,7 @@ class MessageController extends Controller
         $message = message::where('receiverid',  session()->get('userid'))->where('senderid', $request->sender)->get();
         $message[0]->senderid =session()->get('userid');
        $message[0]->receiverid = $request->sender;
-        $message[0]->message = $request->message;
+        $message[0]->message = $request->reply;
         $message[0]->save();
      // echo $message;
     // echo $request->sender.'<br>';

@@ -158,7 +158,7 @@
                                                 <label style="font-weight:bold;">skill</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                            {{$users[0]->skill}}
+                                            {{$service->servicename}}
                                             </div>
                                         </div>
                                         <hr />
