@@ -58,6 +58,7 @@ Route::group(['middleware'=>['sess']], function() {
 
 
     Route::get('/customer/serviceprovider', 'CustomerController@serviceshow')->name('customer.serviceshow');
+    Route::post('/customer/serviceprovider', 'CustomerController@fetch')->name('customer.servicesearch');
     Route::get('/customer/serviceprovider/info/{id}', 'CustomerController@serviceinfo')->name('customerservicepro.info');
 
     Route::get('/customer/serviceprovider/service-feedback/{id}', 'FeedbackController@servicefeedback')->name('servicefeedback.info');
