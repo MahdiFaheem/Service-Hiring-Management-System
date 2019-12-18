@@ -36,6 +36,7 @@ Route::get('/adminhome/warnings', 'HistoryController@warning')->name('adminhome.
 
 
 Route::get('/adminhome/serviceprovider', 'AdminServiceController@serviceshow')->name('adminhome.serviceshow');
+Route::post('/adminhome/serviceprovider', 'AdminServiceController@fetch')->name('servicepro.search');
 Route::get('/adminhome/serviceprovider/info/{id}', 'AdminServiceController@serviceinfo')->name('servicepro.info');
 Route::get('/adminhome/serviceprovider/info/edit/{id}', 'AdminServiceController@serviceedit')->name('servicepro.edit');
 Route::post('/adminhome/serviceprovider/info/edit/{id}', 'AdminServiceController@serviceupdate');
@@ -46,6 +47,7 @@ Route::post('/adminhome/serviceprovider/info/message/{id}', 'AdminServiceControl
 Route::get('/adminhome/serviceprovider/info/delete/{id}', 'AdminServiceController@servicedelete')->name('servicepro.delete');
 
 Route::get('/adminhome/customer', 'AdminCustomerController@customershow')->name('adminhome.customershow');
+Route::post('/adminhome/customer', 'AdminCustomerController@fetch')->name('adminhome.customersearch');
 Route::get('/adminhome/customer/info/{id}', 'AdminCustomerController@customerinfo')->name('admincustomer.info');
 Route::get('/adminhome/customer/info/warning/{id}', 'AdminCustomerController@customerwarn')->name('admincustomer.warn');
 Route::post('/adminhome/customer/info/warning/{id}', 'AdminCustomerController@customerwarning');

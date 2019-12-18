@@ -89,5 +89,25 @@ class AdminServiceController extends Controller
         }
     }
 
-
+    function fetch(Request $request)
+    {
+     if($request->get('query'))
+     {
+      $query = $request->get('query');
+      $data = DB::table('user')
+        ->where('username', 'LIKE', "%{$query}%")
+        ->where('type' , 1)
+        ->get();
+      $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+      foreach($data as $row)
+      {
+        $url = route('servicepro.info', $row->userid);
+       $output .= '
+       <li><a href="'.$url.'">'.$row->username.'</a></li>
+       ';
+      }
+      $output .= '</ul>';
+      echo $output;
+     }
+}
 }

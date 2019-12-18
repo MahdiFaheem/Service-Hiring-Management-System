@@ -105,12 +105,13 @@
       <form method="post" action="../admin/searchpro" class="search-location mt-md-5">
           <div class="row justify-content-center">
             <div class="col-lg-10 align-items-end">
-              <div class="form-group">
-                <div class="form-field">
-                  <input type="text" class="form-control" placeholder="Search" name="search">
-                  <button><span class="ion-ios-search"  ></span></button>
-                </div>
+            <div class="form-group">
+              <div class="active-purple-3 active-purple-4 mb-4">
+                <input type="text" class="form-control form-control-sm ml-3 w-75" placeholder="Search Service Provider" name="search" id="search">
+                <div id="searchlist"> </div>
               </div>
+              @csrf
+            </div>
             </div>
           </div>
         </form>
@@ -145,3 +146,30 @@
 
   </body>
   </html>
+  <script>
+$(document).ready(function(){
+
+ $('#search').keyup(function(){ 
+        var query = $(this).val();
+        if(query != '')
+        {
+         var _token = $('input[name="_token"]').val();
+         $.ajax({
+          url:"{{ route('servicepro.search') }}",
+          method:"POST",
+          data:{query:query, _token:_token},
+          success:function(data){
+           $('#searchlist').fadeIn();  
+                    $('#searchlist').html(data);
+          }
+         });
+        }
+    });
+
+    $(document).on('click', 'li', function(){  
+        $('#search').val($(this).text());  
+        $('#searchlist').fadeOut();  
+    });  
+
+});
+</script>
