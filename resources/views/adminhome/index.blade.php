@@ -64,7 +64,7 @@
                   <a href="{{route('adminhome.message')}}" class="dropdown-item">Messages</a>
                   <a href="{{route('adminhome.history')}}" class="dropdown-item">User History</a>
                   <a href="{{route('adminhome.warning')}}" class="dropdown-item">Warnings</a>
-                  <a href="../admin/transaction" class="dropdown-item">Transaction</a>
+                  <a href="{{route('adminhome.transaction')}}" class="dropdown-item">Transaction</a>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@
       <div class="row no-gutters slider-text justify-content-center align-items-center">
         <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-end">
           <div class="text text-center">
-            <h1 class="mb-4"> <br>Welcome home Admin {{session('userid')}} </h1>
+            <h1 class="mb-4"> <br>Welcome home Admin  </h1>
 
           </div>
         </div>

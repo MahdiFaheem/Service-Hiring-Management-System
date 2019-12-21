@@ -32,6 +32,7 @@ Route::get('/adminhome/messages', 'HistoryController@message')->name('adminhome.
 Route::get('/adminhome/feedbacks', 'HistoryController@feedback')->name('adminhome.feedback');
 Route::get('/adminhome/history', 'HistoryController@history')->name('adminhome.history');
 Route::get('/adminhome/warnings', 'HistoryController@warning')->name('adminhome.warning');
+Route::get('/adminhome/transaction', 'HistoryController@transaction')->name('adminhome.transaction');
 
 
 

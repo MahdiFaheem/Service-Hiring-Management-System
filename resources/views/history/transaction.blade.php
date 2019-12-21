@@ -116,7 +116,7 @@
         </div> </th>
 
       <th> <div class="col-sm-3 col-md-2 col-5">
-          <label style="font-weight:bold;">Service</label>
+          <label style="font-weight:bold;">Service Name</label>
       </div></th> 
 
 
@@ -138,42 +138,42 @@
 
       </tr>
     <hr />
-    <% for(var i=0; i< user.length; i++){ %>
+    @for($i=0; $i< count($user); $i++)
       <tr>
 
         <td> <div class="col-md-8 col-6">
-              <%= user[i].username %>
+              {{ $user[$i]->username }}
          </div></td>
      
    
      
      <td> <div class="col-md-8 col-6">
-           <%= user[i].servicename %>
+     {{ $user[$i]->servicename }}
       </div></td>
 
  <td> 
     <div class="col-md-8 col-6">
-         <%= user[i].totalamount %>
+    {{ $user[$i]->totalamount }}
     </div>
   </td>
 
   <td> 
         <div class="col-md-8 col-6">
-                <%= user[i].provideramount %>
+        {{ $user[$i]->provideramount }}
         </div>
         
       </td>
 
       <td> 
             <div class="col-md-8 col-6">
-                    <%= user[i].comamount %>
+            {{ $user[$i]->comamount}}
             </div>
             
           </td>
 
 </tr> 
 
- <% } %>
+@endfor
 </div>
 </div>
 
