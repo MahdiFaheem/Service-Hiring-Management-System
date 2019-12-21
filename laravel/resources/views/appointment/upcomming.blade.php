@@ -61,6 +61,7 @@
                             
                         </ul>
                          <form method="post">
+                         @csrf
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Appointment</h3>
@@ -68,7 +69,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             Service id
-                                            <input type="text" class="form-control" placeholder="" value="{{$appointment[0]->serviceid}}" name="serviceid" disabled  />
+                                            <input type="text" class="form-control" placeholder="" value="{{$appointment[0]->serviceid}}" name="serviceid"   />
                                         </div>
                                         
                                         
@@ -83,7 +84,7 @@
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                     Price(in Tk)
-                                                 <input type="text" class="form-control" placeholder="" value="{{$appointment[0]->amount}}" name="price" disabled />
+                                                 <input type="text" class="form-control" placeholder="" value="{{$appointment[0]->amount}}" name="price"  />
                                                 </div>
                                         <div class="form-group">
                                             <input type="time" class="form-control" placeholder="" value="{{$appointment[0]->time}}" name="time" disabled/>
@@ -93,7 +94,7 @@
                             
                                       
                                         <div class="col-md-16">
-                                            <a href="../customer/upcomming/pay" class="list-group-item list-group-item-action">Pay <br> </a>
+                                        <input type="submit" name="submit" value="Pay">
                                     </div>
                                      
                                     </div>

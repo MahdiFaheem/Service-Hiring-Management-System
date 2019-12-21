@@ -75,7 +75,9 @@ Route::group(['middleware'=>['sess']], function() {
     Route::get('/customer/upcomming', 'AppointmentController@upcomming')->name('customer.upcomming');
     Route::get('/customer/completed', 'AppointmentController@completed')->name('customer.completed');
     Route::get('/customer/requested/delete', 'AppointmentController@delete')->name('appointment.delete');
-    Route::get('/customer/upcomming/pay', 'AppointmentController@pay')->name('appointment.pay');
+    Route::post('/customer/upcomming', 'AppointmentController@pay')->name('appointment.pay');
+    Route::get('/customer/history', 'AccountController@customerhistory')->name('customer.history');
+    
 
 
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Appointment;
+use App\Account;
 use Illuminate\Http\Request;
 use App\Service;
 
@@ -166,14 +167,26 @@ class AppointmentController extends Controller
 
     }
 
-    public function pay(Appointment $appointment)
+    public function pay(Request $request, Appointment $appointment )
     {
         $appointment = Appointment::where('cid',  session()->get('userid'))
         ->first();
         $appointment->pay=1;
         $appointment->complete=1;
         $appointment->save();
-        return redirect()->route('customer-home.index');
+        $account=new Account();
+        $account->cid=session()->get('userid');
+       // echo $request->price;
+        $account->serviceid=$request->serviceid;
+        $account->totalamount=$request->price;
+        $account->provideramount=($request->price/2);
+        $account->comamount=($request->price/2);
+        $account->save();
+        
+
+
+
+       return redirect()->route('customer-home.index');
 
 
     }

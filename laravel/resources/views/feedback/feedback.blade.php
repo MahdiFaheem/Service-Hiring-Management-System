@@ -70,7 +70,7 @@
         <div class="row no-gutters slider-text justify-content-center align-items-center">
           
           	<div class="text text-center">
-	            <h1 class="mb-4"> <br>Welcome home Customer  </h1>
+	            <h1 class="mb-4"> <br>Welcome home {{session()->get('username')}}  </h1>
 	           
             </div>
           

@@ -69,7 +69,7 @@
         <div class="row no-gutters slider-text justify-content-center align-items-center">
           
             <div class="text text-center">
-              <h1 class="mb-4"> <br>Your profile </h1>
+              <h1 class="mb-4"> <br>Your profile {{session()->get('username')}} </h1>
 
              
             </div>

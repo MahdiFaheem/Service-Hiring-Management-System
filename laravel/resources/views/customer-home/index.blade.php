@@ -51,6 +51,7 @@
                   <a href="{{route('customer.requested')}}" class="dropdown-item">Requested Appointments</a>
                   <a href="{{route('customer.upcomming')}}" class="dropdown-item">Upcomming Appointments</a>
                   <a href="{{route('customer.completed')}}" class="dropdown-item">Completed Appointments</a>
+                  <a href="{{route('customer.history')}}" class="dropdown-item">History</a>
                 </div>
               </div>
             </div>
@@ -81,10 +82,7 @@
               <div class="row justify-content-center">
                 <div class="col-lg-10 align-items-end">
                   <div class="form-group">
-                    <div class="form-field">
-                      <input type="text" class="form-control" placeholder="Search Services">
-                      <button><span class="ion-ios-search"></span></button>
-                    </div>
+                   
                   </div>
                 </div>
               </div>
@@ -121,9 +119,7 @@
             </div>
             <div class="desc">
               <h3><a href="properties.html">James Stallon</a></h3>
-              <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash; 10
-                  Properties</span>
-              </p>
+              
             </div>
           </div>
         </div>
@@ -134,9 +130,7 @@
             </div>
             <div class="desc">
               <h3><a href="properties.html">James Stallon</a></h3>
-              <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash; 10
-                  Properties</span>
-              </p>
+              
             </div>
           </div>
         </div>
@@ -147,9 +141,7 @@
             </div>
             <div class="desc">
               <h3><a href="properties.html">James Stallon</a></h3>
-              <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash; 10
-                  Properties</span>
-              </p>
+              
             </div>
           </div>
         </div>
@@ -160,9 +152,7 @@
             </div>
             <div class="desc">
               <h3><a href="properties.html">James Stallon</a></h3>
-              <p class="h-info"><span class="position">Listing</span> <span class="details">&mdash; 10
-                  Properties</span>
-              </p>
+             
             </div>
           </div>
         </div>

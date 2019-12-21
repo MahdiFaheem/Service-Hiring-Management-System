@@ -48,6 +48,7 @@
                   <a href="{{route('customer.requested')}}" class="dropdown-item">Requested Appointments</a>
                   <a href="{{route('customer.upcomming')}}" class="dropdown-item">Upcomming Appointments</a>
                   <a href="{{route('customer.completed')}}" class="dropdown-item">Completed Appointments</a>
+                  <a href="{{route('customer.history')}}" class="dropdown-item">History</a>
                 </div>
               </div>
             </div>
@@ -70,7 +71,7 @@
         <div class="row no-gutters slider-text justify-content-center align-items-center">
           
           	<div class="text text-center">
-	            <h1 class="mb-4"> <br>Welcome home {{session()->get('username')}} </h1>
+	            <h1 class="mb-4"> <br>Welcome home  {{session()->get('username')}}  </h1>
 	           
             </div>
           
@@ -88,7 +89,7 @@
         <div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
             <span class="subheading"></span>
-            <h2 class="mb-2">Notices </h2>
+            <h2 class="mb-2"> Service History </h2>
           </div>
         </div>
       </div>
@@ -97,41 +98,57 @@
 
    <div class="list-group" align="center" >
     <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-      <table>
+      <table align="center">
      
      <tr>
 
        <th><div class="col-sm-3 col-md-2 col-5">
-            <label style="font-weight:bold;">Sender</label>
+            <label style="font-weight:bold;">Customer name</label>
         </div> </th>
 
-      
+      <th> <div class="col-sm-3 col-md-2 col-5">
+          <label style="font-weight:bold;">Service Id</label>
+      </div></th> 
+      <th> <div class="col-sm-3 col-md-2 col-5">
+          <label style="font-weight:bold;">Service Name</label>
+      </div></th> 
 
 
 
      <th> <div class="col-sm-3 col-md-2 col-5">
-        <label style="font-weight:bold;">Notice</label>
+        <label style="font-weight:bold;">Total Amount</label>
     </div>
       </th> 
 
 
       </tr>
     <hr />
-     @for($i=0; $i< count($notice); $i++)
+     @for( $i=0; $i< count($account); $i++)
       <tr>
 
         <td> <div class="col-md-8 col-6">
-              Admin
+              {{session()->get('username')}}
          </div></td>
      
- <td>
+   
+     
+     <td> <div class="col-md-8 col-6">
+          {{$account[$i]->serviceid}}
+      </div></td>
+      <td> <div class="col-md-8 col-6">
+          {{$account[$i]->servicename}}
+      </div></td>
+
+ <td> 
     <div class="col-md-8 col-6">
-         {{$notice[$i]->warning}}
+   tk {{$account[$i]->totalamount}}
     </div>
   </td>
-</tr> 
-@endfor
- 
+
+
+
+
+ @endfor
 </div>
 </div>
 
